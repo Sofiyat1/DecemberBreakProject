@@ -235,7 +235,7 @@ button {
 
   .quiz-container {
     max-width: 90%;
-    min-height: 600px;
+    min-height: 500px;
     overflow-y: auto;
     border-radius: 20px;
     margin-top: 7px;
