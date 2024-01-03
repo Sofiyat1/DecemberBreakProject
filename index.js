@@ -1,4 +1,5 @@
 var quiz = {
+  //An array of objects holding the question, answer and option for users
   data: [
     {
       question: "What is Computer Coding?",
@@ -187,7 +188,7 @@ var quiz = {
 };
 
 
-
+//Enabling time limit of 20 minutes
 let remainingTime = 1200; // 20 minutes in seconds
 let timerInterval;
 
@@ -295,12 +296,13 @@ function checkAnswer() {
   const currentQuestionData = quiz.data[quiz.currentQuestion];
 
   if (selectedIndex === currentQuestionData.answer) {
-    resultMessage.textContent = "Correct!";
+    resultMessage.innerHTML = "<span style='font-weight: bold; font-size: 1.2em;'>Correct!</span>";   
+     resultMessage.style.color = "green"
     quiz.score++;
   } else {
-    resultMessage.textContent = `Incorrect! The correct answer is: ${
+    resultMessage.innerHTML = `<span style = "font-weight: bold; font-size: 1.2em; color: red;">Incorrect! </span><span style='font-weight: bold; font-size: 1.2em;'> ${
       currentQuestionData.option[currentQuestionData.answer]
-    }`;
+    }</span>`;
   }
 
   // Disable buttons after the user has selected an answer
