@@ -189,7 +189,7 @@ var quiz = {
 
 
 //Enabling time limit of 20 minutes
-let remainingTime = 20; // 20 minutes in seconds
+let remainingTime = 1200; // 20 minutes in seconds
 let timerInterval;
 
 function updateTimerDisplay() {

@@ -226,9 +226,9 @@ button {
     font-size: 1rem;
   }
   .time {
-    left: 54%;
-    top: 1px;
-    width: 40%;
+    left: 58%;
+    top: 20px;
+    width: 60%;
     font-size: 17px;
     z-index: 7;
   }
@@ -236,6 +236,7 @@ button {
   .quiz-container {
     max-width: 90%;
     min-height: 500px;
+    height: 550px;
     overflow-y: auto;
     border-radius: 20px;
     margin-top: 7px;
