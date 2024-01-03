@@ -211,6 +211,7 @@ function startTimer() {
       clearInterval(timerInterval);
       // Handle quiz timeout (e.g., show results, submit form, etc.)
       console.log("Time's up!");
+      endQuiz()
     }
   }, 1000);
 }
@@ -240,6 +241,24 @@ quizContainer.addEventListener("click", (e) => {
 });
 
 start.addEventListener("click", btnClickEventHandler);
+
+function endQuiz(){
+  stopTimer();
+
+  const scoreSection = document.getElementById("score-section")
+  const quizContainer = document.getElementById("quiz-container")
+  const resultMessage = document.getElementById("result-message")
+  const tryAgainButton = document.getElementById("tryAgain")
+
+  //Disable Buttons after time is up
+  const buttons = document.querySelectorAll("#options-container button");
+  buttons.forEach((button) => (button.disabled = true));
+
+  //Show the result message
+  resultMessage.innerHTML = "<span style = 'font-weight: bold; font-size: 1.2em; color: red;'>Times Up!</span>"
+  scoreSection.style.display = "block";
+  showResult()
+}
 
 
 const warningMessage = document.getElementById("warning-message");
@@ -299,7 +318,7 @@ function checkAnswer() {
     resultMessage.innerHTML = "<span style='font-weight: bold; font-size: 1.2em;'>Correct!</span>";   
      resultMessage.style.color = "green"
     quiz.score++;
-  } else {
+  } else if(selectedIndex !== -1) {
     resultMessage.innerHTML = `<span style = "font-weight: bold; font-size: 1.2em; color: red;">Incorrect! </span><span style='font-weight: bold; font-size: 1.2em;'> ${
       currentQuestionData.option[currentQuestionData.answer]
     }</span>`;
@@ -308,6 +327,11 @@ function checkAnswer() {
   // Disable buttons after the user has selected an answer
   const buttons = document.querySelectorAll("#options-container button");
   buttons.forEach((button) => (button.disabled = true));
+
+  //If the time is exhausted, end the Quiz
+  if(remainingTime === 0){
+    endQuiz()
+  }
 }
 
 function nextQuestion() {

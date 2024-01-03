@@ -226,42 +226,97 @@ button {
     font-size: 1rem;
   }
   .time {
-    left: 52%;
-    top: 15px;
+    left: 54%;
+    top: 1px;
     width: 40%;
-    font-size: 13px;
+    font-size: 17px;
+    z-index: 7;
   }
 
   .quiz-container {
-    position: relative;
-    right: 10px;
-    width: 330px;
-    height: 90%;
-    margin: auto;
-    margin-top: 10px;
+    max-width: 90%;
+    min-height: 500px;
+    overflow-y: auto;
     border-radius: 20px;
+    margin-top: 7px;
   }
+
   .content{
     padding-top: 20px;
   }
   
   .content h1 {
     text-align: center;
-    font-size: 1.3rem;
-    padding: 12px;
+    font-size: 1.9rem;
+    padding: 0;
+    margin: 0;
   }
   .content h3 {
-    line-height: 30px;
-    font-size: 16px;
-    padding-top: 20px;
+    line-height: 25px;
+    font-size: 20px;
+    padding-top: 23px;
   }
   .options {
     display: block;
+    padding: 0;
+    margin: 2px;
   }
 
   #options-container button {
-    display: block;
     border: none;
-    font-size: 10px;
+    font-size: 15px;
+    padding: 10px;
+    white-space: normal;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+  }
+
+  #next-button {
+    padding: 10px;
+  }
+
+  button{
+    margin-right: 10px;
+
+  }
+  .score-section {
+    left: 8%;
+    right: 0;
+    bottom: 0;
+    top: 25%;
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    height: 250px;
+    border-radius: 20px;
+  }
+
+  .allScore{
+    flex-basis: auto;
+  }
+  
+  .score-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .score-section p {
+    font-size: 1rem;
+  }
+  
+  .score-section button {
+    border-radius: 10px;
+    left: 29%;
+  }
+  
+  #tryAgain {
+    display: block;
+  }
+  
+  #quizOverlay {
+    max-width: 100%;
+    min-height: 500px;
+    overflow-y: auto;
   }
 }
