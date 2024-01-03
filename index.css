@@ -227,7 +227,7 @@ button {
   }
   .time {
     left: 58%;
-    top: 20px;
+    top: 40px;
     width: 60%;
     font-size: 17px;
     z-index: 7;
@@ -235,8 +235,7 @@ button {
 
   .quiz-container {
     max-width: 90%;
-    min-height: 500px;
-    height: 550px;
+    min-height: 60px;
     overflow-y: auto;
     border-radius: 20px;
     margin-top: 7px;
@@ -283,7 +282,7 @@ button {
   }
   .score-section {
     display: none;
-    left: 8%;
+    left: 7%;
     right: 0;
     bottom: 0;
     top: 25%;
