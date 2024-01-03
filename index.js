@@ -189,7 +189,7 @@ var quiz = {
 
 
 //Enabling time limit of 20 minutes
-let remainingTime = 1200; // 20 minutes in seconds
+let remainingTime = 20; // 20 minutes in seconds
 let timerInterval;
 
 function updateTimerDisplay() {
@@ -242,20 +242,20 @@ quizContainer.addEventListener("click", (e) => {
 
 start.addEventListener("click", btnClickEventHandler);
 
+//To disable the option buttons and end the quiz when time is up
 function endQuiz(){
   stopTimer();
 
   const scoreSection = document.getElementById("score-section")
-  const quizContainer = document.getElementById("quiz-container")
   const resultMessage = document.getElementById("result-message")
-  const tryAgainButton = document.getElementById("tryAgain")
 
   //Disable Buttons after time is up
   const buttons = document.querySelectorAll("#options-container button");
   buttons.forEach((button) => (button.disabled = true));
 
   //Show the result message
-  resultMessage.innerHTML = "<span style = 'font-weight: bold; font-size: 1.2em; color: red;'>Times Up!</span>"
+  alert("Time's Up")
+  //resultMessage.innerHTML = "<span style = 'font-weight: bold; font-size: 1.5em; color: red;'>Time's Up!</span>"
   scoreSection.style.display = "block";
   showResult()
 }
@@ -338,7 +338,6 @@ function nextQuestion() {
   // Reset result message and enable buttons for the next question
   const resultMessage = document.getElementById("result-message");
   const scoreSection = document.getElementById("score-section");
-  const quizContainer = document.getElementById("quiz-container");
   const nextButton = document.getElementById("next-button");
 
   resultMessage.textContent = "";
@@ -403,6 +402,9 @@ function clickOutsideScoreSectionHandler(event) {
 }
 
 const tryAgainClickEventHandler = () => {
+  //Clear the "Time's Up" message
+  const resultMessage = document.getElementById("result-message");
+  resultMessage.textContent = "";
   document.getElementById("quizOverlay").style.display = "none";
   
   // Reset and show the quiz container
